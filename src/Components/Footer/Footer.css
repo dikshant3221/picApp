@@ -1,0 +1,31 @@
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    background-color:#3ec7e0;
+    left: 0;
+    bottom: 0;
+  }
+  
+  .subscribe-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    margin: 10px 10px 10px 0px;
+  }
+  
+  .social-media-container {
+    display: flex;
+    align-items: center;
+    margin: 10px 10px 10px 0px;
+  }
+  
+  .social-media-container a {
+    margin: 0 60px;
+  }
+  
+  p {
+    margin: 0;
+  }

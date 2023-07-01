@@ -21,6 +21,7 @@ const MainPage = () => {
   const handleSearch = () => {
     // Perform search functionality
     setSearchItem(searchTerm);
+    setSelectedButton(searchTerm);
     prevItem.target = searchTerm;
   };
   return (
