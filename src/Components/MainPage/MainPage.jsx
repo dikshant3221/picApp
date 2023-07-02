@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import './MainPage.css';
 import FetchData from '../FetchData/fetchData';
 
@@ -6,8 +6,6 @@ const MainPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedButton, setSelectedButton] = useState('Mountains');
   const [searchItem, setSearchItem] = useState("Mountains");
-  const prevItem = useRef();
-
 
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
@@ -22,11 +20,14 @@ const MainPage = () => {
     // Perform search functionality
     setSearchItem(searchTerm);
     setSelectedButton(searchTerm);
-    prevItem.target = searchTerm;
+   
   };
   return (
     <div className="main-page">
-      <h2 className="main-heading">Pics Selector</h2>
+      <div className="fa-3x">
+      <i className="fa-solid fa-camera-rotate fa-flip">Pics Selector</i>
+      </div>
+  
       <div className="search-container">
         <input
           type="text"
@@ -67,7 +68,7 @@ const MainPage = () => {
       </div>
       <p className="selected-button">Showing Result of : {selectedButton}</p>
       <div>
-     {(prevItem !== prevItem.target)?<FetchData  message = {searchItem} />:null}
+     {(searchItem )?<FetchData  message = {searchItem} />:null}
     </div>
     </div>
     

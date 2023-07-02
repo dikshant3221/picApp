@@ -1,13 +1,12 @@
 .main-page {
     text-align: center;
-    margin: auto;
-    padding: 20px;
-    max-width: 1320px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     background-color: #f2f2f2;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
-
   .main-heading {
     font-weight: bold;
     font-size: 24px;
@@ -17,6 +16,8 @@
  
   .search-container {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
   }
@@ -52,6 +53,7 @@
   
   .button-container {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     margin-bottom: 20px;
   }
@@ -93,9 +95,4 @@
     object-fit: cover;
   }
   
-  
-  
-  
-  
-  
-  
+ 

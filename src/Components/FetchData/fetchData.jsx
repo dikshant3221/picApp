@@ -7,16 +7,13 @@ const url1 = "&client_id=P4rheu1xo8vBqBKxM4S0XevaOFgPc1TZM4zC0Z7VbWI"
 
 const FetchData = (props) => {
   const [images, setImages] = useState([]);
-  const [popUp, setVisibilty] = useState(false);
-  const [popUpImage, setpopUpImage] = useState({});
+  const [popUpImage, setPopUpImage] = useState({});
 
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        await axios.get(url + props.message+ url1).then(response=>{
-          setImages(response.data.results);
-        });
-       
+        const response = await axios.get(url + props.message + url1);
+        setImages(response.data.results); 
       } catch (error) {
         console.error('Error fetching images:', error);
       }
@@ -26,8 +23,7 @@ const FetchData = (props) => {
   }, [props]);
 
   const showPopUp = (img)=>{
-     setpopUpImage(img);
-     setVisibilty(true);
+     setPopUpImage(img);
   }
 
   return (
@@ -38,7 +34,7 @@ const FetchData = (props) => {
         <img key={image.id} src={image.urls.thumb} alt = {props.message} className="image-item" onClick={(e)=>showPopUp(image)}/>     
         )):<h1>Sorry No Images with name {props.message} </h1>}
       </div>
-      { popUp?<Popup imageUrl={popUpImage.urls.regular} id ={popUpImage.id}/>:null}
+      { popUpImage.id && <Popup imageUrl={popUpImage.urls} id ={popUpImage.id}/>}
     </div>
   );
 };

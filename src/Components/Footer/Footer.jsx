@@ -3,9 +3,9 @@ import '../Footer/Footer.css'
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="subscribe-container">
-        <input type="text" placeholder="Subscribe Now" />
-        <button>Send</button>
+      <div className="input-group">
+       <input type="email" className="input" id="Email" name="Email" placeholder="YourMail@gmail.com" />
+       <input className="button--submit" value="Subscribe" type="submit"/>
       </div>
       <div className="social-media-container">
         <a href="https://www.facebook.com">

@@ -1,10 +1,10 @@
-import React, { useState,useEffect } from 'react';
+import { useState,useEffect} from 'react';
 import '../ImagePopUp/Popup.css';
 import { saveAs } from 'file-saver';
+import Loading from '../Loader/loading.jsx';
 const Popup = ({ imageUrl,id}) => {
   const [showPopup, setShowPopup] = useState(true);
-  
-
+  const [isloaded, setIsLoading] = useState(false);
   useEffect(()=>{
     setShowPopup(true);
 
@@ -15,24 +15,25 @@ const Popup = ({ imageUrl,id}) => {
   };
 
   const handleDownload = () => {
-    saveAs(imageUrl, 'image.jpg');
+    saveAs(imageUrl.full, 'image.jpg');
   };
 
-  return (
+  return showPopup ? (
     <div className="image-popup">
-        
-      {showPopup && (
-        <div className="popup-overlay">
-          <div className="popup-content">
-            <img src={imageUrl} alt={id} />
-            <button class = "downloadButton" onClick={handleDownload}>Download</button>
-            <button class = "downloadButton" onClick={handlePopupClose}>Close</button>
+      <div className="popup-overlay">
+        <div className="popup-content">
+          <img src={imageUrl.small_s3} alt={id} onLoad ={()=>setIsLoading(true)} />
+		   {isloaded? 
+          <div className="popup-button">
+            <button className="downloadButton" onClick={handleDownload}>Download</button>
+            <button className="downloadButton" onClick={handlePopupClose}>Close</button>
           </div>
+		   :<Loading/>}
         </div>
-      )}
-         {showPopup && <div className="fade-effect" onClick={handlePopupClose}></div>}
+      </div>
+      <div className="fade-effect"></div>
     </div>
-  );
+  ) : null;
 };
 
 export default Popup;
