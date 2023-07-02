@@ -6,8 +6,8 @@ const Popup = ({ imageUrl,id}) => {
   const [showPopup, setShowPopup] = useState(true);
   const [isloaded, setIsLoading] = useState(false);
   useEffect(()=>{
+    setIsLoading(false);
     setShowPopup(true);
-
   },[imageUrl]);
 
   const handlePopupClose = () => {

@@ -25,7 +25,7 @@ const MainPage = () => {
   return (
     <div className="main-page">
       <div className="fa-3x">
-      <i className="fa-solid fa-camera-rotate fa-flip">Pics Selector</i>
+      <i className="fa-solid fa-camera-rotate fa-flip">Pics Search </i>
       </div>
   
       <div className="search-container">
