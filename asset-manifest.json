@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/picApp/static/css/main.41e584ef.css",
-    "main.js": "/picApp/static/js/main.782be26f.js",
+    "main.js": "/picApp/static/js/main.10da68b0.js",
     "index.html": "/picApp/index.html",
     "main.41e584ef.css.map": "/picApp/static/css/main.41e584ef.css.map",
-    "main.782be26f.js.map": "/picApp/static/js/main.782be26f.js.map"
+    "main.10da68b0.js.map": "/picApp/static/js/main.10da68b0.js.map"
   },
   "entrypoints": [
     "static/css/main.41e584ef.css",
-    "static/js/main.782be26f.js"
+    "static/js/main.10da68b0.js"
   ]
 }
