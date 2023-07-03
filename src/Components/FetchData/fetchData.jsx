@@ -22,9 +22,14 @@ const FetchData = (props) => {
     fetchImages();
   }, [props]);
 
-  const showPopUp = (img)=>{
-     setPopUpImage(img);
-  }
+  const showPopUp = (img) => {
+    if (popUpImage.id === img.id && popUpImage.id !== '') {
+      // If the same image is clicked again, clear the popUpImage state and close the popup
+      setPopUpImage({});
+    } else {
+      setPopUpImage(img);
+    }
+  };
 
   return (
     <div>

@@ -8,14 +8,14 @@ const Popup = ({ imageUrl,id}) => {
   useEffect(()=>{
     setIsLoading(false);
     setShowPopup(true);
-  },[imageUrl]);
+  },[imageUrl,id]);
 
   const handlePopupClose = () => {
     setShowPopup(false);
   };
 
   const handleDownload = () => {
-    saveAs(imageUrl.full, 'image.jpg');
+    saveAs(new Blob([imageUrl.full]), 'image.jpg');
   };
 
   return showPopup ? (
